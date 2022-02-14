@@ -217,9 +217,36 @@ export class Event {
     return this.event.getInnerHtml()
   }
 
-  getDateHtml(): string {
-    return this.range.originalString
-  }
+	getDateHtml(): string {
+		let ret = ""
+
+		if (this.range.from.day) {
+			ret = ret + String(this.range.from.day) + "/"
+		}
+
+		if (this.range.from.month) {
+			ret = ret + String(this.range.from.month) + "/"
+		}
+
+		ret = ret + String(this.range.from.year)
+
+		if (this.range.to) {
+			ret = ret + "-"
+
+			if (this.range.to.day) {
+				ret = ret + String(this.range.to.day) + "/"
+			}
+
+			if (this.range.to.month) {
+				ret = ret + String(this.range.to.month) + "/"
+			}
+
+			ret = ret + String(this.range.to.year)
+		}
+
+		return ret
+		// return this.range.originalString
+	}
 
   static fromLineGroup(lines: string[]): Event | undefined {
     if (!lines || !lines.length) {
