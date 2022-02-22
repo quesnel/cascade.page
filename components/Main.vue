@@ -60,8 +60,8 @@ export default Vue.extend({
 
 <style>
 body {
-  background-color: #384047;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
   margin: 0;
 }
 #app {
