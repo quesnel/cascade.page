@@ -182,6 +182,7 @@ export class EventDescription {
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
+      .replace(/\|/g, '<br />')
       .replace(this.linkRegex, (substring, linkText, link) => {
         return `<a class="underline" href="${link}">${linkText}</a>`;
       }).replace(this.atRegex, (substring, at) => {
